@@ -988,14 +988,18 @@ object {
 
 /*-------------  Custom stuff  ----------*/
 .mdl-layout__header {
-  background-color: #292929 !important;
-  color: #f3f3f3 !important;
+  background-color: #f3f3f3 !important;
+  color: #111 !important;
 }
 .mdl-layout__header a {
-  color: #f3f3f3 !important;
+  color: #111 !important;
   text-decoration: none;
 }
 
-.sub-menu a {
-  color: #111 !important;
+.sub-menu li {
+  background-color: #f3f3f3 !important;
+}
+.headline {
+  font-weight: 400;
+  font-size: .7em;
 }

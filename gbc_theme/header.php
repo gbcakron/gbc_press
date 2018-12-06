@@ -45,7 +45,9 @@
           $gbc_theme_description = get_bloginfo( 'description', 'display' );
           if ( $gbc_theme_description || is_customize_preview() ) :
             ?>
-            <?php echo $gbc_theme_description; /* WPCS: xss ok. */ ?>
+            <span class="headline">
+              <?php echo $gbc_theme_description; /* WPCS: xss ok. */ ?>
+            </span>
           <?php endif; ?>
         </span>
         <!-- Add spacer, to align navigation to the right -->
