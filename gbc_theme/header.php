@@ -50,17 +50,30 @@
         </span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
+
+        <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
+          <?php
+          wp_nav_menu( array(
+            'theme_location' => 'menu-1',
+            'menu_id'        => 'primary-menu',
+          ) );
+          ?>
+        </nav><!-- #site-navigation -->
+
+        <!-- Navigation. We hide it in small screens.
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <a class="mdl-navigation__link" href="">Link</a>
           <a class="mdl-navigation__link" href="">Link</a>
           <a class="mdl-navigation__link" href="">Link</a>
           <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
+        </nav>-->
       </div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Title</span>
+
+
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
@@ -71,17 +84,5 @@
     <main class="mdl-layout__content">
       <div class="page-content">
 
-        <header id="masthead" class="site-header">
-
-          <nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
-            <?php
-            wp_nav_menu( array(
-              'theme_location' => 'menu-1',
-              'menu_id'        => 'primary-menu',
-            ) );
-            ?>
-          </nav><!-- #site-navigation -->
-        </header><!-- #masthead -->
 
         <!-- Site content begins -->
