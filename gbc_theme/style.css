@@ -909,7 +909,8 @@ object {
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+  display: inline-block;
+  max-width: 2em;
 }
 
 /*--------------------------------------------------------------
@@ -982,4 +983,19 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+/*-------------  Custom stuff  ----------*/
+.mdl-layout__header {
+  background-color: #292929 !important;
+  color: #f3f3f3 !important;
+}
+.mdl-layout__header a {
+  color: #f3f3f3 !important;
+  text-decoration: none;
+}
+
+.sub-menu a {
+  color: #111 !important;
 }

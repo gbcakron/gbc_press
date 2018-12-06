@@ -28,9 +28,14 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_ROOT_HOST: %
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
+    expose:
+      - "1306"
+    ports:
+      - "1306:3306"
 
 volumes:
   db_data:

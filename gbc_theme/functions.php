@@ -142,7 +142,7 @@ add_action( 'wp_enqueue_scripts', 'gbc_theme_scripts' );
 
 function add_material_design_light() {
   wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
-  wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.indigo-pink.min.css' );
+  wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );
   wp_enqueue_script( 'material-design-light-js', 'https://code.getmdl.io/1.3.0/material.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'add_material_design_light' );
