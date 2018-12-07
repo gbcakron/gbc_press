@@ -62,25 +62,29 @@
           ) );
           ?>
         </nav><!-- #site-navigation -->
-
-        <!-- Navigation. We hide it in small screens.
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-        </nav>-->
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title">
+        <?php
+          if ( is_front_page() && is_home() ) :
+            ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+            <?php
+          else :
+            ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <?php endif; ?>
+      </span>
 
 
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <?php
+            wp_nav_menu( array(
+              'theme_location' => 'menu-1',
+              'menu_id'        => 'primary-menu',
+            ) );
+            ?>
       </nav>
     </div>
     <main class="mdl-layout__content">
