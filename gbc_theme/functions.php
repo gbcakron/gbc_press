@@ -147,6 +147,10 @@ function add_material_design_light() {
 }
 add_action( 'wp_enqueue_scripts', 'add_material_design_light' );
 
+function add_parallax() {
+  wp_enqueue_style( 'parallax-style', get_template_directory_uri() . '/css/parallax.css' );
+}
+add_action( 'wp_enqueue_scripts', 'add_parallax' );
 
 /**
  * Implement the Custom Header feature.

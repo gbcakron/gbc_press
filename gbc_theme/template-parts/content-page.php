@@ -6,15 +6,19 @@
  *
  * @package gbc_theme
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <?php
+      $agency_lite_img_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'agency-lite-post-image-withsidebar', false );
+      if($agency_lite_img_src){
+        the_title( '<div class="parallax" style="background-image: url(' . esc_url($agency_lite_img_src[0]) . ');"><h1 class="entry-title">', '</h1></div>' );
+      } else {
+        the_title( '<h1 class="entry-title">', '</h1>' );
+      }
+    ?>
 	</header><!-- .entry-header -->
-
-	<?php gbc_theme_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
