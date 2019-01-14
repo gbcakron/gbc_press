@@ -87,7 +87,7 @@
             ?>
       </nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content container">
       <div class="page-content">
 
 

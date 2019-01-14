@@ -152,6 +152,11 @@ function add_parallax() {
 }
 add_action( 'wp_enqueue_scripts', 'add_parallax' );
 
+function add_simplegrid() {
+  wp_enqueue_style( 'simplegrid-style', get_template_directory_uri() . '/css/simple-grid.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'add_simplegrid' );
+
 /**
  * Implement the Custom Header feature.
  */
