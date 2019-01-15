@@ -16,7 +16,7 @@
 
 get_header();
 ?>
-  <h1>this is a custom grid page</h1>
+  <!-- this is a custom grid page -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -35,7 +35,6 @@ get_header();
 
 		?>
 
-    <h4>Your ID <?php echo get_the_ID() ?></h4>
 
     <div class="row">
 
@@ -50,8 +49,12 @@ get_header();
       $mypages = get_pages( $args );
       foreach( $mypages as $post )
       { ?>
-        <div class="col-4">
-          <?php echo $post->post_title; ?>
+        <div class="col-4 center">
+
+          <a href="<?php echo get_permalink($post) ?>">
+            <img style="width: 280px; height: 200px; object-fit: fill;" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post ), 'post-thumbnail' ) ?>">
+            <?php echo $post->post_title; ?>
+          </a>
         </div>
       <?php
       }
