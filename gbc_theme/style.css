@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
 
-.mdl-layout__content.container {
+.mdl-layout__content {
   overflow: visible;
   text-decoration: none;
 }
@@ -58,6 +58,19 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 a {
   text-decoration: none;
+}
+
+.grid__image {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.mdl-grid {
+  padding: 0;
+}
+.mdl-cell {
+  margin: 0;
 }
 
 /* Document

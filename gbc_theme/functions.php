@@ -123,6 +123,12 @@ function gbc_theme_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'gbc_theme_widgets_init' );
+function add_material_design_light() {
+  wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
+  wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );
+  wp_enqueue_script( 'material-design-light-js', 'https://code.getmdl.io/1.3.0/material.min.js' );
+}
+add_action( 'wp_enqueue_scripts', 'add_material_design_light' );
 
 /**
  * Enqueue scripts and styles.
@@ -140,22 +146,16 @@ function gbc_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gbc_theme_scripts' );
 
-function add_material_design_light() {
-  wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
-  wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );
-  wp_enqueue_script( 'material-design-light-js', 'https://code.getmdl.io/1.3.0/material.min.js' );
-}
-add_action( 'wp_enqueue_scripts', 'add_material_design_light' );
 
 function add_parallax() {
   wp_enqueue_style( 'parallax-style', get_template_directory_uri() . '/css/parallax.css' );
 }
 add_action( 'wp_enqueue_scripts', 'add_parallax' );
 
-function add_simplegrid() {
-  wp_enqueue_style( 'simplegrid-style', get_template_directory_uri() . '/css/simple-grid.min.css' );
-}
-add_action( 'wp_enqueue_scripts', 'add_simplegrid' );
+// function add_simplegrid() {
+//   wp_enqueue_style( 'simplegrid-style', get_template_directory_uri() . '/css/simple-grid.min.css' );
+// }
+// add_action( 'wp_enqueue_scripts', 'add_simplegrid' );
 
 /**
  * Implement the Custom Header feature.

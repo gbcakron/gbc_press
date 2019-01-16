@@ -35,8 +35,7 @@ get_header();
 
 		?>
 
-
-    <div class="row">
+    <div class="mdl-grid">
 
     <?php
       $args = array(
@@ -49,11 +48,10 @@ get_header();
       $mypages = get_pages( $args );
       foreach( $mypages as $post )
       { ?>
-        <div class="col-4 center">
+        <div class="mdl-cell mdl-cell--4-col center">
 
           <a href="<?php echo get_permalink($post) ?>">
-            <img style="width: 280px; height: 200px; object-fit: fill;" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post ), 'post-thumbnail' ) ?>">
-            <?php echo $post->post_title; ?>
+            <img alt="<?php echo $post->post_title; ?>" class="grid__image" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post ), 'post-thumbnail' ) ?>">
           </a>
         </div>
       <?php
