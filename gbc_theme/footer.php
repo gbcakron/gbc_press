@@ -16,21 +16,64 @@
     </main>
   </div>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gbc_theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'gbc_theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'gbc_theme' ), 'gbc_theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer__middle-section">
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Features</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Updates</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Details</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="#">Specs</a></li>
+          <li><a href="#">Tools</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Technology</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Patterns</a></li>
+          <li><a href="#">Usage</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contracts</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">FAQ</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="#">Questions</a></li>
+          <li><a href="#">Answers</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mdl-mega-footer__bottom-section">
+      <div class="mdl-logo">Title</div>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy & Terms</a></li>
+      </ul>
+    </div>
+
+  </footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -33,7 +33,7 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary (page) -->
 
 <?php
 get_sidebar();

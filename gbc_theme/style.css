@@ -50,11 +50,6 @@ body {
   font-family: 'RennerBook';
 }
 
-.mdl-layout__content {
-  overflow: visible;
-  text-decoration: none;
-}
-
 .center {
   text-align: center;
 }
@@ -1016,6 +1011,9 @@ object {
 
 
 /*-------------  Custom stuff  ----------*/
+.mdl-layout__container {
+  position: static;
+}
 .mdl-layout__header {
   background-color: #f3f3f3 !important;
   color: #111 !important;
@@ -1073,4 +1071,26 @@ object {
 }
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
   background-color: inherit !important;
+}
+
+h1, h2, h3 {
+  color: rgba(47,123,237,255);
+}
+
+.mdl-layout__content {
+  overflow: visible;
+  text-decoration: none;
+}
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.entry-content {
+  margin: auto;
+  width: 90%;
+  padding: 10px;
 }

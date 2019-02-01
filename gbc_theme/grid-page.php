@@ -59,7 +59,7 @@ get_header();
     ?>
     </div>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary (grid-page) -->
 
 <?php
 // get_sidebar();
