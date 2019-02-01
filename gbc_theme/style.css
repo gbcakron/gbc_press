@@ -46,6 +46,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
+body {
+  font-family: 'RennerBook';
+}
 
 .mdl-layout__content {
   overflow: visible;
@@ -423,7 +426,6 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -937,7 +939,7 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
-  max-width: 2em;
+  max-width: 280px;
 }
 
 /*--------------------------------------------------------------
@@ -1021,6 +1023,7 @@ object {
 .mdl-layout__header a {
   color: #111 !important;
   text-decoration: none;
+  font-weight: 400;
 }
 
 .sub-menu li {

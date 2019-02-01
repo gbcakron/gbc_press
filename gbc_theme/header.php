@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/renner" type="text/css"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -33,6 +33,7 @@
         <span class="mdl-layout-title">
         <?php
           the_custom_logo();
+          /*
           if ( is_front_page() && is_home() ) :
             ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -42,12 +43,13 @@
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
             <?php
           endif;
+          */
           $gbc_theme_description = get_bloginfo( 'description', 'display' );
           if ( $gbc_theme_description || is_customize_preview() ) :
             ?>
-            <span class="headline">
+            <!-- <span class="headline">
               <?php echo $gbc_theme_description; /* WPCS: xss ok. */ ?>
-            </span>
+            </span> -->
           <?php endif; ?>
         </span>
         <!-- Add spacer, to align navigation to the right -->
