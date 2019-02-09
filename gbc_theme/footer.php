@@ -69,7 +69,9 @@
       <!-- <div class="mdl-logo">Title</div> -->
       <ul class="mdl-mega-footer__link-list">
         <!-- <li><a href="#">Help</a></li> -->
-        <li>&copy; Grace Bible Church 2019</li>
+        <li>&copy; 2019 Grace Bible Church 2019</li>
+        <li>5781 Manchester Rd, New Franklin OH 44319</li>
+        <li>330-882-4416</li>
       </ul>
     </div>
 
