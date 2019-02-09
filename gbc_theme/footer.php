@@ -18,7 +18,7 @@
 
 
   <footer class="mdl-mega-footer">
-    <div class="mdl-mega-footer__middle-section">
+    <!-- <div class="mdl-mega-footer__middle-section">
 
       <div class="mdl-mega-footer__drop-down-section">
         <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
@@ -63,13 +63,13 @@
         </ul>
       </div>
 
-    </div>
+    </div> -->
 
     <div class="mdl-mega-footer__bottom-section">
-      <div class="mdl-logo">Title</div>
+      <!-- <div class="mdl-logo">Title</div> -->
       <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Privacy & Terms</a></li>
+        <!-- <li><a href="#">Help</a></li> -->
+        <li>&copy; Grace Bible Church 2019</li>
       </ul>
     </div>
 

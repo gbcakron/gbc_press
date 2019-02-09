@@ -730,7 +730,7 @@ a:hover, a:active {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0;
 	overflow: hidden;
 }
 
@@ -868,7 +868,7 @@ a:hover, a:active {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	/* margin: 0 0 1.5em; */
 }
 
 .updated:not(.published) {
@@ -1011,6 +1011,12 @@ object {
 
 
 /*-------------  Custom stuff  ----------*/
+h1.entry-title{
+  font-size: 2.5em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+}
 .mdl-layout__container {
   position: static;
 }
