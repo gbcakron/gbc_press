@@ -1017,6 +1017,11 @@ h1.entry-title{
   text-align: center;
   margin-bottom: 0;
 }
+footer {
+  /* position: absolute; */
+  bottom: -32px;
+  /* width: 100%; */
+}
 .mdl-layout__container {
   position: static;
 }
