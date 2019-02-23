@@ -146,7 +146,6 @@ function gbc_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gbc_theme_scripts' );
 
-
 function add_parallax() {
   wp_enqueue_style( 'parallax-style', get_template_directory_uri() . '/css/parallax.css' );
 }
@@ -156,6 +155,66 @@ add_action( 'wp_enqueue_scripts', 'add_parallax' );
 //   wp_enqueue_style( 'simplegrid-style', get_template_directory_uri() . '/css/simple-grid.min.css' );
 // }
 // add_action( 'wp_enqueue_scripts', 'add_simplegrid' );
+
+
+//*** custom shortcodes ***
+
+// [short_event_list events="5"]
+function short_event_list_func( $atts ){
+  $a = shortcode_atts( array(
+    'events' => 3
+  ), $atts );
+
+  $events = tribe_get_events(array('eventDisplay' => 'upcoming', 'posts_per_page' => $a['events']));
+  if (!empty($events)) {
+      echo $title ? $before_title . $title . $after_title : '';
+      foreach ($events as $event) {
+          // $start_date = strtotime(tribe_get_start_date($event->ID));
+          $start_date = strtotime(tribe_get_start_date( $event->ID, true, tribe_get_date_format( true ) ));
+
+          $start_date_day = date('Y-m-d', $start_date);
+          // $end_date = strtotime(tribe_get_end_date($event->ID));
+          $end_date = strtotime(tribe_get_end_date( $event->ID, true, tribe_get_date_format( true ) ));
+
+          $end_date_day = date('Y-m-d', $end_date);
+          $all_day = tribe_event_is_all_day($event->ID);
+          $time_format = get_option( 'time_format' );
+          if ($all_day) {
+              $date_format = date('F jS', $start_date) . '<span>&bullet;</span> <em>' . __('All day', 'espresso') . '</em>';
+          } else {
+              if ($end_date_day) {
+                  if ($start_date_day == $end_date_day) {
+                      $date_format = date('F jS', $start_date) . '<span>&bullet;</span> <em>' .  tribe_get_start_date( $event, false, $time_format ) . ' &ndash; ' . tribe_get_end_date( $event, false, $time_format ) . '</em>';
+                  } else {
+                      $date_format = date('F jS', $start_date) . ' <em>@ ' . tribe_get_start_date( $event, false, $time_format ) . '<br />' . __('to', 'espresso') . '</em> ' . date('F jS', $end_date) . ' <em>@' . tribe_get_end_date( $event, false, $time_format ) . '</em>';
+                  }
+              }
+          }
+          echo '<article class="upcoming-event-block clearfix">';
+          echo '<h3><a href="'.get_permalink($event->ID).'">';
+          echo apply_filters('the_title', $event->post_title);
+          echo '</a></h3>';
+          echo "<small>".$date_format."</small>";
+          echo '<p>'.($event->post_excerpt ? $event->post_excerpt : truncate($event->post_content, 155)).'</p>';
+          echo '<a class="es-button" href="' . get_permalink($event->ID).'">'._e('Event Information', 'espresso');
+          echo '</a></article>';
+      }
+  }
+  wp_reset_query();
+}
+add_shortcode( 'short_event_list', 'short_event_list_func' );
+
+
+function truncate($string, $length)
+{
+    if (strlen($string) > $length) {
+        $string = substr($string, 0, $length) . '...';
+    }
+
+    return $string;
+}
+
+//*** custom shortcodes ***
 
 /**
  * Implement the Custom Header feature.
