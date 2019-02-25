@@ -11,9 +11,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
     <?php
-      $agency_lite_img_src = wp_get_attachment_image_src( get_post_thumbnail_id( the_ID() ), 'agency-lite-post-image-withsidebar', false );
-      if (has_post_thumbnail( the_ID()) ){
-        the_title( '<div class="parallax" style="background-image: url(' . esc_url($agency_lite_img_src[0]) . ');"><h1 class="entry-title">', '</h1></div>' );
+      if (has_post_thumbnail($post_id) ){
+        $parallax_img_src = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'agency-lite-post-image-withsidebar', false );
+        the_title( '<div class="parallax" style="background-image: url(' . esc_url($parallax_img_src[0]) . ');"><h1 class="entry-title">', '</h1></div>' );
       } else {
         the_title( '<h1 class="entry-title">', '</h1>' );
       }
