@@ -901,6 +901,10 @@ a:active {
   margin: 0;
 }
 
+.page-content {
+  min-height: 200px;
+}
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
