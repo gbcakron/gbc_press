@@ -66,6 +66,14 @@
     </div> -->
 
     <div class="mdl-mega-footer__bottom-section">
+      <div class="social-links">
+        <a href="http://facebook.com/GraceBibleAkron" target="_blank">
+          <i class="fa fa-facebook-square"></i>
+        </a>
+        <a href="https://www.instagram.com/explore/locations/214349459292304/grace-bible-church/" target="_blank">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
       <!-- <div class="mdl-logo">Title</div> -->
       <ul class="mdl-mega-footer__link-list">
         <!-- <li><a href="#">Help</a></li> -->

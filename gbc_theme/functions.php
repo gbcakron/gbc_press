@@ -156,6 +156,10 @@ add_action( 'wp_enqueue_scripts', 'add_parallax' );
 // }
 // add_action( 'wp_enqueue_scripts', 'add_simplegrid' );
 
+function enqueue_load_fa() {
+  wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
 
 //*** custom shortcodes ***
 
