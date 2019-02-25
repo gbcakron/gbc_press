@@ -1149,3 +1149,6 @@ h3 {
   width: 90%;
   padding: 10px;
 }
+.mdl-navigation__link {
+  opacity: 1;
+}
