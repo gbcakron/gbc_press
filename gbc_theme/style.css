@@ -1216,3 +1216,11 @@ h3 {
 .upcoming-event-block h3 {
   margin: 12px 0;
 }
+
+.has-2-columns .wp-block-column:first-of-type {
+  flex-basis: 70%;
+}
+
+.has-2-columns .wp-block-column:last-of-type {
+  flex-basis: 30%;
+}
