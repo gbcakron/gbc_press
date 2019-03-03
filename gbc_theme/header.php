@@ -54,7 +54,7 @@
         </span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
-
+        <div id="primary-nav-button"><i class="fa fa-bars btn-menu"></i></div>
         <?php
         // <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
         //   <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><? php esc_html_e( 'Primary Menu', 'gbc_theme' ); ? ></button>
