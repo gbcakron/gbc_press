@@ -55,40 +55,52 @@
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
 
-        <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
-          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
-          <?php
-          wp_nav_menu( array(
-            'theme_location' => 'menu-1',
-            'menu_id'        => 'primary-menu',
-          ) );
-          ?>
-        </nav><!-- #site-navigation -->
+        <?php
+        // <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
+        //   <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><? php esc_html_e( 'Primary Menu', 'gbc_theme' ); ? ></button>
+        //   < ?php
+        //   wp_nav_menu( array(
+        //     'theme_location' => 'menu-1',
+        //     'menu_id'        => 'primary-menu',
+        //   ) );
+        //   ? >
+        // </nav><!-- #site-navigation -->
+        ?>
       </div>
     </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">
-        <?php
-          if ( is_front_page() && is_home() ) :
-            ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-            <?php
-          else :
-            ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        <?php endif; ?>
-      </span>
+    <?php
+    // <div class="mdl-layout__drawer">
+    //   <span class="mdl-layout-title">
+    //     <?php
+    //       if ( is_front_page() && is_home() ) :
+    //         ? >
+    //         <a href="<?php echo esc_url( home_url( '/' ) ); ? >" rel="home"><?php bloginfo( 'name' ); ? ></a>
+    //         <?php
+    //       else :
+    //         ? >
+    //         <a href="<?php echo esc_url( home_url( '/' ) ); ? >" rel="home"><?php bloginfo( 'name' ); ? ></a>
+    //     <?php endif; ? >
+    //   </span>
+    //   <nav class="mdl-navigation">
+    //     <?php
+    //         wp_nav_menu( array(
+    //           'theme_location' => 'menu-1',
+    //           'menu_id'        => 'primary-menu',
+    //         ) );
+    //         ? >
+    //   </nav>
+    // </div>
+    ?>
+    <nav id="site-navigation">
+      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
+      <?php
+      wp_nav_menu( array(
+        'theme_location' => 'menu-1',
+        'menu_id'        => 'primary-menu',
+      ));
+      ?>
+    </nav>
 
-
-      <nav class="mdl-navigation">
-        <?php
-            wp_nav_menu( array(
-              'theme_location' => 'menu-1',
-              'menu_id'        => 'primary-menu',
-            ) );
-            ?>
-      </nav>
-    </div>
     <main class="mdl-layout__content">
       <div class="page-content">
 

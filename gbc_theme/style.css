@@ -1076,9 +1076,37 @@ footer {
   text-decoration: none;
   font-weight: 400;
 }
-
-.sub-menu li {
-  background-color: #f3f3f3 !important;
+.menu-primary-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#primary-menu {
+  padding: 2rem;
+  display: inline-block;
+  width: 60%;
+}
+#primary-menu a{
+  color: #404040;
+}
+#primary-menu .menu-item {
+  display: inline-block;
+  width: 30%;
+  pointer-events: none;
+  cursor: default;
+  vertical-align: top;
+  font-size: 2em;
+}
+#primary-menu .sub-menu .menu-item {
+  display: block;
+  font-size: 14px;
+  pointer-events: auto;
+  cursor: auto;
+  width: 100%;
+}
+#primary-menu .sub-menu {
+  padding-left: 0;
+  margin: 1rem 0 0;
 }
 .headline {
   font-weight: 400;
