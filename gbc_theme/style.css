@@ -655,11 +655,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #284ab0;
 }
 
 a:visited {
-  color: purple;
+  color: #284ab0;
 }
 
 a:hover,
@@ -1174,7 +1174,9 @@ footer {
 h1,
 h2,
 h3 {
-  color: rgba(47, 123, 237, 255);
+  /* color: rgba(47, 123, 237, 255); */
+  color: #424242;
+
 }
 
 .mdl-layout__content {
