@@ -1226,3 +1226,10 @@ h3 {
 .has-2-columns .wp-block-column:last-of-type {
   flex-basis: 30%;
 }
+
+/* --- sermon styling --- */
+.wpfc_grid_image img{
+  max-width: 100%;
+  max-height: calc(100vw * (5/16));
+  object-fit: fill;
+}
