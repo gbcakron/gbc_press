@@ -46,8 +46,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
-body {
+body, h1, h2, h3 {
   font-family: "RennerBook";
+  /* font-family: 'Open Sans Condensed', sans-serif; */
 }
 
 .center {
@@ -1088,22 +1089,35 @@ footer {
 .btn-menu {
   font-size: 1.8rem !important;
 }
+
+#site-navigation h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
 #primary-menu {
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   display: inline-block;
   width: 50rem;
   margin-left: 0;
+  margin-top: 0;
 }
 #primary-menu a{
   color: #404040;
 }
 #primary-menu .menu-item {
+  /* display: none; */
   display: block;
   width: 100%;
   pointer-events: none;
   cursor: default;
   font-size: 2em;
   margin-top: 1.5rem;
+}
+#primary-menu .menu-item a {
+  display: none;
+}
+#primary-menu .sub-menu .menu-item a {
+  display: block;
 }
 @media screen and (min-width: 800px) {
   #primary-menu .menu-item {
@@ -1232,4 +1246,10 @@ h3 {
   max-width: 100%;
   max-height: calc(100vw * (5/16));
   object-fit: fill;
+}
+
+.wpfc-sermon-single-image-img{
+  display: block;
+  margin: auto;
+  height: 150px;
 }

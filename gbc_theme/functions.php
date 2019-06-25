@@ -124,6 +124,9 @@ function gbc_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'gbc_theme_widgets_init' );
 function add_material_design_light() {
+  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' );
+
+
   wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
   wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );
   wp_enqueue_script( 'material-design-light-js', 'https://code.getmdl.io/1.3.0/material.min.js' );
@@ -161,6 +164,76 @@ function enqueue_load_fa() {
   wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
+
+
+
+
+
+//*****  custom logo link */
+
+
+function custom_get_custom_logo( $blog_id = 0 ) {
+  $html          = '';
+  $switched_blog = false;
+
+  if ( is_multisite() && ! empty( $blog_id ) && (int) $blog_id !== get_current_blog_id() ) {
+      switch_to_blog( $blog_id );
+      $switched_blog = true;
+  }
+
+  $custom_logo_id = get_theme_mod( 'custom_logo' );
+
+  // We have a logo. Logo is go.
+  if ( $custom_logo_id ) {
+      $custom_logo_attr = array(
+          'class' => 'custom-logo',
+      );
+
+      /*
+       * If the logo alt attribute is empty, get the site title and explicitly
+       * pass it to the attributes used by wp_get_attachment_image().
+       */
+      $image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+      if ( empty( $image_alt ) ) {
+          $custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+      }
+
+      $home_url = 'https://www.grace-biblechurch.org/';
+      /*
+       * If the alt attribute is not empty, there's no need to explicitly pass
+       * it because wp_get_attachment_image() already adds the alt attribute.
+       */
+      $html = sprintf(
+          '<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+          esc_url( $home_url /*home_url( '/' )*/ ),
+          wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+      );
+  } elseif ( is_customize_preview() ) {
+      // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
+      $html = sprintf(
+          '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
+          esc_url( home_url( '/' ) )
+      );
+  }
+
+  if ( $switched_blog ) {
+      restore_current_blog();
+  }
+
+  /**
+   * Filters the custom logo output.
+   *
+   * @since 4.5.0
+   * @since 4.6.0 Added the `$blog_id` parameter.
+   *
+   * @param string $html    Custom logo HTML output.
+   * @param int    $blog_id ID of the blog to get the custom logo for.
+   */
+  return apply_filters( 'get_custom_logo', $html, $blog_id );
+}
+
+//***  end custom logo link */
+
 
 
 //*** custom shortcodes ***

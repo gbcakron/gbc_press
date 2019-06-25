@@ -32,7 +32,8 @@
         <!-- Title -->
         <span class="mdl-layout-title">
         <?php
-          the_custom_logo();
+          // the_custom_logo();
+          echo custom_get_custom_logo();
           /*
           if ( is_front_page() && is_home() ) :
             ?>
@@ -93,6 +94,14 @@
     ?>
     <nav id="site-navigation">
       <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
+      <h3>
+      <?php
+      $gbc_theme_description = get_bloginfo( 'description', 'display' );
+      echo $gbc_theme_description; /* WPCS: xss ok. */
+      ?>
+      <!-- Loving&hellip; Following&hellip; Sharing&hellip; -->
+      </h3>
+
       <?php
       wp_nav_menu( array(
         'theme_location' => 'menu-1',
