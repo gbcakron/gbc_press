@@ -48,67 +48,45 @@
           $gbc_theme_description = get_bloginfo( 'description', 'display' );
           if ( $gbc_theme_description || is_customize_preview() ) :
             ?>
-            <!-- <span class="headline">
-              <?php echo $gbc_theme_description; /* WPCS: xss ok. */ ?>
-            </span> -->
+            <?php /* echo $gbc_theme_description; */ /* WPCS: xss ok. */ ?>
           <?php endif; ?>
         </span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
-        <div id="primary-nav-button"><i class="fa fa-bars btn-menu"></i></div>
-        <?php
-        // <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
-        //   <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><? php esc_html_e( 'Primary Menu', 'gbc_theme' ); ? ></button>
-        //   < ?php
-        //   wp_nav_menu( array(
-        //     'theme_location' => 'menu-1',
-        //     'menu_id'        => 'primary-menu',
-        //   ) );
-        //   ? >
-        // </nav><!-- #site-navigation -->
-        ?>
+        <nav id="site-navigation" class="mdl-navigation mdl-layout--large-screen-only main-navigation">
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
+          <?php
+          wp_nav_menu( array(
+            'theme_location' => 'menu-1',
+            'menu_id'        => 'primary-menu',
+          ) );
+          ?>
+        </nav><!-- #site-navigation -->
       </div>
     </header>
-    <?php
-    // <div class="mdl-layout__drawer">
-    //   <span class="mdl-layout-title">
-    //     <?php
-    //       if ( is_front_page() && is_home() ) :
-    //         ? >
-    //         <a href="<?php echo esc_url( home_url( '/' ) ); ? >" rel="home"><?php bloginfo( 'name' ); ? ></a>
-    //         <?php
-    //       else :
-    //         ? >
-    //         <a href="<?php echo esc_url( home_url( '/' ) ); ? >" rel="home"><?php bloginfo( 'name' ); ? ></a>
-    //     <?php endif; ? >
-    //   </span>
-    //   <nav class="mdl-navigation">
-    //     <?php
-    //         wp_nav_menu( array(
-    //           'theme_location' => 'menu-1',
-    //           'menu_id'        => 'primary-menu',
-    //         ) );
-    //         ? >
-    //   </nav>
-    // </div>
-    ?>
-    <nav id="site-navigation">
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gbc_theme' ); ?></button>
-      <h3>
-      <?php
-      $gbc_theme_description = get_bloginfo( 'description', 'display' );
-      echo $gbc_theme_description; /* WPCS: xss ok. */
-      ?>
-      <!-- Loving&hellip; Following&hellip; Sharing&hellip; -->
-      </h3>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        <?php
+          if ( is_front_page() && is_home() ) :
+            ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+            <?php
+          else :
+            ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <?php endif; ?>
+      </span>
 
-      <?php
-      wp_nav_menu( array(
-        'theme_location' => 'menu-1',
-        'menu_id'        => 'primary-menu',
-      ));
-      ?>
-    </nav>
+
+      <nav class="mdl-navigation">
+        <?php
+            wp_nav_menu( array(
+              'theme_location' => 'menu-1',
+              'menu_id'        => 'primary-menu',
+            ) );
+            ?>
+      </nav>
+    </div>
 
     <main class="mdl-layout__content">
       <div class="page-content">

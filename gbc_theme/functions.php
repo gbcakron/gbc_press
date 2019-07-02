@@ -47,13 +47,13 @@ if ( ! function_exists( 'gbc_theme_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'gbc_theme' ),
 		) );
 
-    // function atg_menu_classes($classes, $item, $args) {
-    //   if($args->theme_location == 'menu-1') {
-    //     $classes[] = 'mdl-navigation__link';
-    //   }
-    //   return $classes;
-    // }
-    // add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+    function atg_menu_classes($classes, $item, $args) {
+      if($args->theme_location == 'menu-1') {
+        $classes[] = 'mdl-navigation__link';
+      }
+      return $classes;
+    }
+    add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
