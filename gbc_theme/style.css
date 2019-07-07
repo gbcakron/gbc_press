@@ -1143,6 +1143,15 @@ footer {
     width: 8rem;
     padding: 0;
   }
+  #primary-menu .mdl-layout__header-row .mdl-navigation {
+    padding-right: 3.4em;
+  }
+  .sub-menu li {
+    height: 48px;
+  }
+  .sub-menu li:last-child {
+    height: 64px;
+  }
 }
 
 /* #primary-menu .sub-menu .menu-item {
