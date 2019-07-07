@@ -1139,6 +1139,10 @@ footer {
   #primary-menu .menu-item {
     width: 14rem;
   }
+  #primary-menu .menu-item-has-children {
+    width: 8rem;
+    padding: 0;
+  }
 }
 
 /* #primary-menu .sub-menu .menu-item {
@@ -1153,7 +1157,6 @@ footer {
   padding-left: 0;
   margin: 1rem 0 0;
 } */
-
 
 .headline {
   font-weight: 400;
