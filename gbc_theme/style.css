@@ -1132,6 +1132,10 @@ footer {
   pointer-events: all;
 }
 
+ul#wpfc_images_grid {
+  margin: 0 0 0 -16px;
+}
+
 @media screen and (min-width: 800px) {
   #primary-menu .menu-item {
     display: inline-block;
