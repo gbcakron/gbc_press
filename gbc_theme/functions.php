@@ -249,6 +249,9 @@ function short_event_list_func( $atts ){
       echo $title ? $before_title . $title . $after_title : '';
       echo '<div class="upcoming-event-container">';
       foreach ($events as $event) {
+
+
+
           // $start_date = strtotime(tribe_get_start_date($event->ID));
           $start_date = strtotime(tribe_get_start_date( $event->ID, true, tribe_get_date_format( true ) ));
 
@@ -271,12 +274,19 @@ function short_event_list_func( $atts ){
               }
           }
           echo '<article class="upcoming-event-block clearfix">';
-          echo '<h3><a href="'.get_permalink($event->ID).'">';
-          echo apply_filters('the_title', $event->post_title);
-          echo '</a></h3>';
+          echo tribe_event_featured_image( $event->ID, 'medium' );
+          echo '<div class="tribe-events-event-description">';
+          // echo '<h3><a href="'.get_permalink($event->ID).'">';
+          // echo apply_filters('the_title', $event->post_title);
+          // echo '</a></h3>';
+          echo '<h3>'.apply_filters('the_title', $event->post_title).'</h3>';
           echo "<strong>".$date_format."</strong>";
-          echo '<p>'.($event->post_excerpt ? $event->post_excerpt : truncate($event->post_content, 155)).'</p>';
-          echo '</a></article>';
+          // echo '<p>'.($event->post_excerpt ? $event->post_excerpt : truncate($event->post_content, 155)).'</p>';
+          // echo '<p>'.($event->post_excerpt ? $event->post_excerpt : $event->post_content).'</p>';
+
+          echo wpautop( $event->post_content );
+
+          echo '</a></div></article>';
       }
       echo '</div>';
 
