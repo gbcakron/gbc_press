@@ -1297,3 +1297,39 @@ h3 {
     padding-left: 2em;
   }
 }
+
+.site-main {
+  background-color: #9e9e9e
+}
+
+.menu-tile {
+  text-align: center;
+  height: 152px;
+  line-height: 40px;
+  background-color: #f3f3f3;
+  margin: 15px 15px 15px;
+  width: calc((100% / 3) - 30px);
+  padding: 32px;
+  border-radius: 8px;
+}
+.menu-tile:hover {
+  background-color: #3b92f1;
+  color: #17395e;
+}
+
+.menu-tile .fa {
+  width: 100%;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-size: 3em;
+  font-weight: 400;
+}
+.menu-tile a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  font-weight: 800;
+  color: inherit;
+}
