@@ -1128,6 +1128,9 @@ footer {
 #primary-menu .menu-item a {
   pointer-events: none;
 }
+#primary-menu .menu-item a:only-child {
+  pointer-events: initial;
+}
 #primary-menu .sub-menu .menu-item a {
   pointer-events: all;
 }
