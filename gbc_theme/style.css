@@ -1068,6 +1068,7 @@ footer {
 }
 .mdl-layout__container {
   position: static;
+  margin-bottom: 64px;
 }
 .mdl-layout__header {
   background-color: #f3f3f3 !important;
@@ -1303,10 +1304,6 @@ h3 {
 
 .site-main {
   /* background-color: #9e9e9e */
-}
-
-.mdl-mega-footer__link-list {
-  margin-top: 12px;
 }
 
 .menu-tile {
