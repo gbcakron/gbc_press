@@ -1346,4 +1346,5 @@ blockquote:before {
 blockquote:after {
   content: '';
   margin-left: initial;
+  display: none;
 }
