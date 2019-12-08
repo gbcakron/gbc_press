@@ -15,7 +15,7 @@
       if (has_post_thumbnail()) {
         the_title( '<div class="parallax" data-foo="bar" style="background-image: url(' . esc_url(get_the_post_thumbnail_url( )) . ');"><h1 class="entry-title">', '</h1></div>' );
       } else {
-        the_title( '<h1 class="entry-title">', '</h1>' );
+        // the_title( '<h1 class="entry-title">', '</h1>' );
       }
     ?>
 	</header><!-- .entry-header -->
