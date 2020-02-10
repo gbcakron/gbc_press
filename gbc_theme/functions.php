@@ -126,10 +126,10 @@ add_action( 'widgets_init', 'gbc_theme_widgets_init' );
 function add_material_design_light() {
   wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' );
 
-
   wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
   wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );
   wp_enqueue_script( 'material-design-light-js', 'https://code.getmdl.io/1.3.0/material.min.js' );
+
 }
 add_action( 'wp_enqueue_scripts', 'add_material_design_light' );
 
@@ -237,17 +237,16 @@ function custom_get_custom_logo( $blog_id = 0 ) {
 
 
 //*** custom shortcodes ***
-
 // [short_event_list events="5"]
 function short_event_list_func( $atts ){
   $a = shortcode_atts( array(
     'events' => 3
   ), $atts );
-
+  $short_event_list = '';
   $events = tribe_get_events(array('eventDisplay' => 'upcoming', 'posts_per_page' => $a['events']));
   if (!empty($events)) {
-      echo $title ? $before_title . $title . $after_title : '';
-      echo '<div class="upcoming-event-container">';
+      $short_event_list .= $title ? $before_title . $title . $after_title : '';
+      $short_event_list .= '<div class="upcoming-event-container">';
       foreach ($events as $event) {
 
 
@@ -273,25 +272,21 @@ function short_event_list_func( $atts ){
                   }
               }
           }
-          echo '<article class="upcoming-event-block clearfix">';
-          echo tribe_event_featured_image( $event->ID, 'medium' );
-          echo '<div class="tribe-events-event-description">';
-          // echo '<h3><a href="'.get_permalink($event->ID).'">';
-          // echo apply_filters('the_title', $event->post_title);
-          // echo '</a></h3>';
-          echo '<h3>'.apply_filters('the_title', $event->post_title).'</h3>';
-          echo "<strong>".$date_format."</strong>";
-          // echo '<p>'.($event->post_excerpt ? $event->post_excerpt : truncate($event->post_content, 155)).'</p>';
-          // echo '<p>'.($event->post_excerpt ? $event->post_excerpt : $event->post_content).'</p>';
+          $short_event_list .= '<article class="upcoming-event-block clearfix">';
+          $short_event_list .= tribe_event_featured_image( $event->ID, 'medium' );
+          $short_event_list .= '<div class="tribe-events-event-description">';
+          $short_event_list .= '<h3>'.apply_filters('the_title', $event->post_title).'</h3>';
+          $short_event_list .= "<strong>".$date_format."</strong>";
 
-          echo wpautop( $event->post_content );
+          $short_event_list .= wpautop( $event->post_content );
 
-          echo '</a></div></article>';
+          $short_event_list .= '</a></div></article>';
       }
-      echo '</div>';
+      $short_event_list .= '</div>';
 
   }
   wp_reset_query();
+  return $short_event_list;
 }
 add_shortcode( 'short_event_list', 'short_event_list_func' );
 
