@@ -70,7 +70,7 @@
         <a href="http://facebook.com/GraceBibleAkron" target="_blank">
           <i class="fa fa-facebook-square"></i>
         </a>
-        <a href="https://www.instagram.com/explore/locations/214349459292304/grace-bible-church/" target="_blank">
+        <a href="https://www.instagram.com/gracebiblechurchofakron" target="_blank">
           <i class="fa fa-instagram"></i>
         </a>
       </div>

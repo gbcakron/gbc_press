@@ -124,7 +124,7 @@ function gbc_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'gbc_theme_widgets_init' );
 function add_material_design_light() {
-  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' );
+  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Raleway:300' );
 
   wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
   wp_enqueue_style( 'material-design-light-css', 'https://code.getmdl.io/1.3.0/material.grey-indigo.min.css' );

@@ -49,7 +49,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 body, h1, h2, h3 {
   /* font-family: "RennerBook"; */
   /* font-family: 'Open Sans Condensed', sans-serif; */
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif !important;
+}
+
+
+h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif !important;
 }
 
 .center {
