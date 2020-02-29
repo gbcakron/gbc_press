@@ -198,7 +198,8 @@ function custom_get_custom_logo( $blog_id = 0 ) {
           $custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
       }
 
-      $home_url = 'https://www.grace-biblechurch.org/';
+      /* $home_url = 'https://www.grace-biblechurch.org/'; */
+      $home_url = 'https://www.gbcakron.org/';
       /*
        * If the alt attribute is not empty, there's no need to explicitly pass
        * it because wp_get_attachment_image() already adds the alt attribute.
