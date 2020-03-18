@@ -198,15 +198,13 @@ function custom_get_custom_logo( $blog_id = 0 ) {
           $custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
       }
 
-      /* $home_url = 'https://www.grace-biblechurch.org/'; */
-      $home_url = 'https://www.gbcakron.org/';
       /*
        * If the alt attribute is not empty, there's no need to explicitly pass
        * it because wp_get_attachment_image() already adds the alt attribute.
        */
       $html = sprintf(
           '<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
-          esc_url( $home_url /*home_url( '/' )*/ ),
+          esc_url( home_url( '/' ) ),
           wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
       );
   } elseif ( is_customize_preview() ) {
@@ -291,6 +289,12 @@ function short_event_list_func( $atts ){
 }
 add_shortcode( 'short_event_list', 'short_event_list_func' );
 
+// [featured_video media="5"]
+function featured_video( $atts ){
+  // noop, handled in content-page.php
+  return "";
+}
+add_shortcode( 'featured_video', 'featured_video' );
 
 function truncate($string, $length)
 {
